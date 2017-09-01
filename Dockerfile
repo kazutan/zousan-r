@@ -11,7 +11,10 @@ RUN /bin/bash -c "source /etc/default/locale"
 RUN ln -sf  /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
 # Install ipaexfont
-RUN /bin/bash -c "sudo apt install ipaexfont"
+RUN wget -O IPAfont00303.zip http://ipafont.ipa.go.jp/old/ipafont/IPAfont00303.php
+RUN unzip IPAfont00303.zip
+RUN mv IPAfont00303 /usr/share/fonts/truetype/
+RUN fc-cache
 
 # Install packages
 RUN Rscript -e "install.packages(c('githubinstall', 'ranger', 'revealjs','DT','Nippon','rstan'))"
