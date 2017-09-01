@@ -1,4 +1,4 @@
-FROM rocker/hadleyverse
+FROM rocker/tidyverse:latest
 
 # Change environment to Japanese(Character and DateTime)
 ENV LANG ja_JP.UTF-8
