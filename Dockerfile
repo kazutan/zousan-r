@@ -10,6 +10,9 @@ RUN sed -i '$d' /etc/locale.gen \
 RUN /bin/bash -c "source /etc/default/locale"
 RUN ln -sf  /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
+# Install ipaexfont
+RUN /bin/bash -c "sudo apt install ipaexfont"
+
 # Install packages
 RUN Rscript -e "install.packages(c('githubinstall', 'ranger', 'revealjs','DT','Nippon','rstan'))"
 
